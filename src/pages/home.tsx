@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-import styles from "./home.module.css";
+import styles from "./css/home.module.css";
 
 type User = {
   name: string;
@@ -25,9 +25,8 @@ export function Home() {
   }
 
   return (
-    <div>
-      <h1>Home</h1>
-
+    
+    <div className= {styles.container}>
       {!user ? (
         <GoogleLogin
           onSuccess={login}
