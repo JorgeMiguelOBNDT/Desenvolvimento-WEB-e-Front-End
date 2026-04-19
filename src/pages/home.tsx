@@ -2,6 +2,7 @@ import { useState } from "react";
 import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import styles from "./css/home.module.css";
+import { useNavigate } from "react-router-dom";
 
 type User = {
   name: string;
@@ -11,6 +12,7 @@ type User = {
 
 export function Home() {
   const [user, setUser] = useState<User | null>(null);
+  const navigate = useNavigate();
 
   function login(credentialResponse: { credential?: string }) {
     if (credentialResponse.credential) {
@@ -45,6 +47,14 @@ export function Home() {
           />
 
           <p>Email: {user.email}</p>
+
+            <button
+              onClick={() => navigate("/cadastro")} className={styles.navButtons}> Cadastro
+            </button>
+
+            <button
+              onClick={() => navigate("/apresentacao")} className={styles.navButtons}> Apresentação
+            </button>
 
           <button onClick={logout} className={styles.logoutButton}>
             Sair
