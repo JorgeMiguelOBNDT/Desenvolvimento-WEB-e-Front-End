@@ -1,42 +1,112 @@
 .container {
+  min-height: 100vh;
+  background-color: #eef1f5;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 80vh;
   text-align: center;
-  padding: 50px;
 }
 
-.profilePicture {
+.icon {
   width: 100px;
-  height: auto;
+  height: 100px;
+
+  border: 3px solid #3b5bdb;
   border-radius: 50%;
-  margin: 20px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
 }
 
-.logoutButton {
-  padding: 10px 20px;
-  margin-top: 20px;
-  background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
+.icon svg {
+  width: 50px;
+  height: 50px;
+  color: #3b5bdb;
+}
+
+.loginContainer h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #1e2a3a;
+  margin-bottom: 10px;
+}
+
+.subtitle {
   font-size: 16px;
-  transition: background-color 0.3s;
+  color: #666;
+  margin-bottom: 25px;
 }
 
-.logoutButton:hover {
-  background-color: #d32f2f;
+.googleButton {
+  margin-top: 10px;
 }
 
 .userInfo {
-  margin-top: 20px;
+  background-color: #f5f7fa;
+  width: 350px;
+  margin: 80px auto;
+  padding: 30px 25px;
+
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  text-align: center;
+  transition: 0.3s;
 }
 
-.navButtons {
-  padding: 10px 20px;
+.userInfo:hover {
+  transform: translateY(-5px);
+}
+
+.userInfo h2 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.userInfo p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.profilePicture {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  margin: 15px 0;
+
+  border: 4px solid #e4e7ec;
+}
+
+.logoutButton {
   margin-top: 20px;
-  background-color: blue;
-  color: white;
+
+  padding: 10px 20px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
+
+  background-color: #3b5bdb;
+  color: white;
+
+  font-size: 14px;
   cursor: pointer;
-  font-size: 20px;
+  transition: 0.3s;
+}
+
+.logoutButton:hover {
+  background-color: #2f4ecb;
 }

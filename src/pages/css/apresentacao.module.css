@@ -6,36 +6,6 @@
   padding: 0;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;           
-  padding: 15px 40px;
-  background: linear-gradient(90deg, #0f1c2e, #1e2a3a);
-}
-
-.disciplina {
-  color: #cbd3dc;
-  font-size: 15px;
-}
-
-.navLinks {
-  display: flex;
-  align-items: center;
-}
-
-.navLink {
-  color: #cbd3dc;
-  margin-left: 30px;
-  text-decoration: none;
-  font-size: 16px;
-  transition: 0.3s;
-}
-
-.navLink:hover {
-  color: #ffffff;
-}
-
 .equipe {
   text-align: center;
   padding: 60px 20px;

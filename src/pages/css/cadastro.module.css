@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  min-height: 100vh;
+  background-color: #eef1f5;
+  font-family: 'Poppins', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20px;
+}
+
+.card {
+  background-color: #f5f7fa;
+  width: 350px;
+
+  padding: 30px 25px;
+
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #1e2a3a;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.inputGroup {
+  width: 100%;
+  text-align: left;
+}
+
+.inputGroup label {
+  font-size: 14px;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.inputGroup input {
+  width: 100%;
+  display: block;
+
+  padding: 10px;
+
+  border-radius: 8px;
+  border: 1px solid #d0d5dd;
+
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: #3b5bdb;
+  box-shadow: 0 0 0 2px rgba(59, 91, 219, 0.2);
+}
+
+.button {
+  margin-top: 15px;
+
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+
+  background-color: #3b5bdb;
+  color: white;
+
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: #2f4ecb;
+}
