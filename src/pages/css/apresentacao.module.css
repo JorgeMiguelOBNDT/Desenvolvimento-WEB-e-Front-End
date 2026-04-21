@@ -1,0 +1,106 @@
+.apresentacao {
+  min-height: 100vh;
+  background-color: #eef1f5;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;           
+  padding: 15px 40px;
+  background: linear-gradient(90deg, #0f1c2e, #1e2a3a);
+}
+
+.disciplina {
+  color: #cbd3dc;
+  font-size: 15px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+}
+
+.navLink {
+  color: #cbd3dc;
+  margin-left: 30px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.navLink:hover {
+  color: #ffffff;
+}
+
+.equipe {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.equipe h2 {
+  font-weight: 600;
+}
+
+.equipe h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #3b5bdb;
+  margin: 10px auto 30px;
+  border-radius: 2px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #f5f7fa;
+  width: 320px;
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.role {
+  font-weight: 500;
+}
+
+.card hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 15px 0;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #e4e7ec;
+}
