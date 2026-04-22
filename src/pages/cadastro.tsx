@@ -25,11 +25,17 @@ export function Cadastro() {
     matricula: "",
   });
 
+  const [jsonOutput, setJsonOutput] = useState<FormData | null>(null);
+
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
 
     if (storedUser) {
-      setUser(JSON.parse(storedUser));
+      try {
+        setUser(JSON.parse(storedUser));
+      } catch (error) {
+        console.error("Erro ao ler usuário do localStorage", error);
+      }
     }
   }, []);
 
@@ -43,6 +49,21 @@ export function Cadastro() {
     }
   }, [user]);
 
+  useEffect(() => {
+    const savedCadastro = localStorage.getItem("cadastro");
+
+    if (savedCadastro) {
+      try {
+        const parsed = JSON.parse(savedCadastro);
+
+        setForm(parsed);
+        setJsonOutput(parsed);
+      } catch (error) {
+        console.error("Erro ao carregar cadastro salvo", error);
+      }
+    }
+  }, []);
+
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
 
@@ -55,76 +76,86 @@ export function Cadastro() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    const json = {
-      ...form,
-      criadoEm: new Date().toISOString(),
+    const json: FormData = {
+      nome: form.nome,
+      email: form.email,
+      telefone: form.telefone,
+      matricula: form.matricula,
     };
 
     console.log("JSON gerado:", json);
-    alert("Cadastro realizado! Veja o console.");
+
+    setJsonOutput(json);
+
+    localStorage.setItem("cadastro", JSON.stringify(json));
+
+    alert("Cadastro realizado!");
   }
 
   return (
-    <>
-      <div className={styles.container}>
-        <Navbar />
+    <div className={styles.container}>
+      <Navbar />
 
-        <div className={styles.content}>
-          <div className={styles.card}>
-            <h2 className={styles.title}>Cadastro de Usuário</h2>
+      <div className={styles.content}>
+        <div className={styles.card}>
+          <h2 className={styles.title}>Cadastro de Usuário</h2>
 
-            <form onSubmit={handleSubmit} className={styles.form}>
-              
-              <div className={styles.inputGroup}>
-                <label>Nome</label>
-                <input
-                  type="text"
-                  name="nome"
-                  value={form.nome}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <div className={styles.inputGroup}>
+              <label>Nome</label>
+              <input
+                type="text"
+                name="nome"
+                value={form.nome}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-              <div className={styles.inputGroup}>
-                <label>Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+            <div className={styles.inputGroup}>
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-              <div className={styles.inputGroup}>
-                <label>Telefone</label>
-                <input
-                  type="text"
-                  name="telefone"
-                  value={form.telefone}
-                  onChange={handleChange}
-                />
-              </div>
+            <div className={styles.inputGroup}>
+              <label>Telefone</label>
+              <input
+                type="text"
+                name="telefone"
+                value={form.telefone}
+                onChange={handleChange}
+              />
+            </div>
 
-              <div className={styles.inputGroup}>
-                <label>Matrícula</label>
-                <input
-                  type="text"
-                  name="matricula"
-                  value={form.matricula}
-                  onChange={handleChange}
-                />
-              </div>
+            <div className={styles.inputGroup}>
+              <label>Matrícula</label>
+              <input
+                type="text"
+                name="matricula"
+                value={form.matricula}
+                onChange={handleChange}
+              />
+            </div>
 
-              <button type="submit" className={styles.button}>
-                Finalizar Cadastro
-              </button>
+            <button type="submit" className={styles.button}>
+              Finalizar Cadastro
+            </button>
+          </form>
 
-            </form>
-          </div>
+          {jsonOutput && (
+            <div className={styles.jsonBox}>
+              <h3>JSON gerado:</h3>
+              <pre>{JSON.stringify(jsonOutput, null, 2)}</pre>
+            </div>
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
