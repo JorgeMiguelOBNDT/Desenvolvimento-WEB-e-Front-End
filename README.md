@@ -10,7 +10,7 @@ O projeto foi desenvolvido pelos alunos:
 - Luccas Rodrigues Moreira dos Reis - 20242000047
 - Jorge Miguel de Oliveira Benedito - 20242000063
 
-Para executar o projeto localmente, é necessário inicialmente realizar o download ou clone do repositório. Após isso, deve-se acessar a pasta do projeto através do terminal e instalar todas as dependências utilizando o gerenciador de pacotes npm com o comando `npm install`. Em seguida, é necessário criar um arquivo chamado `.env` na raiz do projeto, onde será configurada a variável de ambiente responsável pela chave de autenticação do Google, no formato `VITE_GOOGLE_CLIENT_ID=seu_client_id_aqui`. 
+Para executar o projeto localmente, é necessário inicialmente realizar o download ou clone do repositório. Após isso, deve-se acessar a pasta do projeto através do terminal e instalar todas as dependências utilizando o gerenciador de pacotes npm com o comando `npm install`.
 
 Com as dependências instaladas e o arquivo de configuração criado, o projeto pode ser executado utilizando o comando `npm run dev`. Após a execução, a aplicação estará disponível no navegador através do endereço `http://localhost:5173`, onde já será possível realizar o login, preencher o formulário e testar todas as funcionalidades implementadas.
 
