@@ -12,7 +12,7 @@ export function Apresentacao() {
 
         <div className={styles.cards}>
           <div className={styles.card}>
-            <img src="/public/img/lc.jpg" alt="Luccas" className={styles.avatar}/>
+            <img src="/img/lc.jpg" alt="Luccas" className={styles.avatar}/>
             <h3>Luccas Gabriel Rodrigues Moreira dos Reis</h3>
             <p className={styles.role}>Desenvolvedor FULL STACK</p>
             <hr />
@@ -23,7 +23,7 @@ export function Apresentacao() {
           </div>
 
           <div className={styles.card}>
-            <img src="/public/img/jm.jpg" alt="Jorge" className={styles.avatar}/>
+            <img src="/img/jm.jpg" alt="Jorge" className={styles.avatar}/>
             <h3>Jorge Miguel de Oliveira Benedito</h3>
             <p className={styles.role}>Desenvolvedor FULL STACK</p>
             <hr />
