@@ -16,3 +16,4 @@ Com as dependências instaladas e o arquivo de configuração criado, o projeto 
 
 A aplicação também pode ser acessada em ambiente de produção através do seguinte link:
 https://desenvolvimento-web-e-front-end.vercel.app
+https://github.com/JorgeMiguelOBNDT/Desenvolvimento-WEB-e-Front-End
